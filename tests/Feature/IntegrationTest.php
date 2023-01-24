@@ -63,4 +63,13 @@ class IntegrationTest extends TestCase
         $response->assertDontSee('John');
         $response->assertDontSee('Ronald Reuel Tolkien');
     }
+    public function test_detalles_libro()
+    {
+        
+        $this->seed(TestConsultarDatosLibroSeeder::class);
+        $response = $this->get('/libros/1');
+
+        $response->assertSee('La Comunidad del Anillo');
+        $response->assertSee('29/07/1954');
+}
 }

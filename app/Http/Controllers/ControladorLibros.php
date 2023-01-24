@@ -54,8 +54,11 @@ class ControladorLibros extends Controller
      * @param  \App\Models\Libros  $libros
      * @return \Illuminate\Http\Response
      */
-    public function show(Libros $libros){}
-    
+    public function show($id)
+    {
+        return view('detalles-libro')
+            ->with('libro', Libros::find($id));
+    }
 
     /**
      * Show the form for editing the specified resource.

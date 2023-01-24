@@ -44,6 +44,9 @@
             <label for="f_publicacion">F_publicacion</label><br>
             <input type="text" name="f_publicacion" id="f_publicacion">
             <br><br>
+            <label for="sinopsis">Sinopsis</label><br>
+            <textarea name="sinopsis" id="sinopsis">Introduzca una breve sinopsis del libro...</textarea>
+            <br><br>
             <input type="hidden" name="id_autor" id="id_autor" value="{{ $id_autor }}">
             <input type="submit" value ="Guardar">
         </form>
@@ -83,6 +86,9 @@
                                 <i class="fa-solid fa-trash"></i>
                             </button>
                         </form>
+                    </td>
+                    <td>
+                        <a href="{{ url('/libros' . '/' . $libro->id) }}"><i class="fa-solid fa-book"></i></a>
                     </td>
                 </tr>
             @endforeach

@@ -20,83 +20,9 @@
         </style>
     </head>
     <body class="antialiased">
-        @if ($errors->any())
-                    
-                        <div id="snackbar">
-                            <ul>
-                                @foreach ($errors->all() as $error)
-                                    <li> {{ $error }} </li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        <script>
-                            var x = document.getElementById("snackbar");
-                            x.className = "show";
-                            setTimeout(function(){ x.className = x.className.replace("show", ""); }, 5000);
-                        </script>
-        @endif
-        <h2> Lista de libros</h2>
-        <form action="{{ url('/libros') }}" method="POST">
-            @csrf
-            <label for="titulo">Titulo</label><br>
-            <input type="text" name="titulo" id="titulo">
-            <br><br>
-            <label for="f_publicacion">F_publicacion</label><br>
-            <input type="text" name="f_publicacion" id="f_publicacion">
-            <br><br>
-            <label for="sinopsis">Sinopsis</label><br>
-            <textarea name="sinopsis" id="sinopsis">Introduzca una breve sinopsis del libro...</textarea>
-            <br><br>
-            <label>Autor</label><br>
-            <select name="id_autor" id="id_autor">
-                @foreach ($autores as $autor)
-                    <option value="{{ $autor->id }}">{{ $autor->nombre }}</option>
-                @endforeach
-            </select>
-            <input type="submit" value ="Guardar">
-        </form>
-        <table>
-            <tr>
-                <th>
-                    Id
-                </th>
-                <th>
-                    Titulo
-                </th>
-                <th>
-                    F_publicacion
-                </th>
-                <th>
-                    Id_autor
-                </th>
-            </tr>
-            @foreach ($libros as $libro)
-                <tr>
-                    <td>
-                        {{ $libro->id }}
-                    </td>
-                    <td>
-                        {{ $libro->titulo }}
-                    </td>
-                    <td>
-                        {{ $libro->f_publicacion }}
-                    </td>
-                    <td>
-                        {{ $libro->id_autor }}
-                    </td>
-                    <td>
-                        <form action="{{ url('/libros' . '/' . $libro->id) }}" method="POST">
-                            {{ method_field('DELETE') }}
-                            <button type="submit">
-                                <i class="fa-solid fa-trash"></i>
-                            </button>
-                        </form>
-                    </td>
-                    <td>
-                        <a href="{{ url('/libros' . '/' . $libro->id) }}"><i class="fa-solid fa-book"></i></a>
-                    </td>
-                </tr>
-            @endforeach
-        </table>
+        <h1>{{ $libro->titulo}}</h1>
+        <p>El libro {{ $libro->titulo}} fue publicado el {{ $libro->f_publicacion }}.</p>
+        <h2>Sinopsis</h2>
+        <p>{{ $libro->sinopsis }}</p>
     </body>
 </html>

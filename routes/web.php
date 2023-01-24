@@ -22,4 +22,5 @@ Route::delete('/autores/{id}', [ControladorAutores::class, 'destroy']);
 
 Route::post('/libros', [ControladorLibros::class, 'store']);
 Route::get('/libros', [ControladorLibros::class, 'index']);
+Route::get('/libros/{id}', [ControladorLibros::class, 'show']);
 Route::delete('/libros/{id}', [ControladorLibros::class, 'destroy']);
