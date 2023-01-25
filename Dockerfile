@@ -11,5 +11,5 @@ COPY . ./
 RUN apk update && apk upgrade
 RUN apk add php-sqlite3
 RUN composer install
-RUN php artisan migrate
+RUN php artisan migrate --force
 CMD php artisan serve --host=0.0.0.0
