@@ -1,0 +1,11 @@
+version: '3.3'
+services: 
+    main:
+        image: tarea6dews_main:latest
+        command: >
+            sh -c "php artisan migrate &&
+                   php artisan serve --host=0.0.0.0"
+        volumes:
+            - .:/app
+        ports:
+            - 8000:8000
