@@ -1,7 +1,7 @@
 version: '3.3'
 services: 
     main:
-        image: tarea6dews_main:latest
+        image: ghcr.io/angelesorganization/tarea-6-dews:main
         command: >
             sh -c "php artisan migrate &&
                    php artisan serve --host=0.0.0.0"
