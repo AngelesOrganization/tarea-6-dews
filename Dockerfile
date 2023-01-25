@@ -7,7 +7,9 @@ RUN curl -sS https://getcomposer.org/installer​ | php -- \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /app
-COPY . .
+COPY . ./
 RUN apk update && apk upgrade
 RUN apk add php-sqlite3
 RUN composer install
+RUN php artisan migrate
+CMD php artisan serve --host=0.0.0.0
