@@ -37,7 +37,6 @@
         @endif
         <h2> Lista de autores</h2>
         <form action="{{ url('/autores') }}" method="POST">
-            @csrf
             <label for="nombre">Nombre</label><br>
             <input type="text" name="nombre" id="nombre">
             <br><br>    

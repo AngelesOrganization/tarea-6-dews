@@ -37,7 +37,6 @@
         @endif
         <h2> Lista de libros del autor</h2>
         <form action="{{ url('/libros') }}" method="POST">
-            @csrf
             <label for="titulo">Titulo</label><br>
             <input type="text" name="titulo" id="titulo">
             <br><br>    

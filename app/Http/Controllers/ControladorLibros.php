@@ -39,7 +39,7 @@ class ControladorLibros extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'titulo' => 'required|max:50|alpha',
+            'titulo' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
             'f_publicacion' => 'nullable|date',
             ]);
     
