@@ -12,6 +12,7 @@ class VerifyCsrfToken extends Middleware
      * @var array<int, string>
      */
     protected $except = [
-        'http://localhost:8000/**'
+        'http://localhost:8000/**',
+        'http://angeles-fernandez-gomez-tarea-6.duckdns.org/**'
     ];
 }
