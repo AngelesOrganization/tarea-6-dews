@@ -36,8 +36,8 @@ class ControladorAutores extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-        'nombre' => 'required|max:15|alpha',
-        'apellidos' => 'required|max:25|alpha',
+        'nombre' => 'required|max:15|regex:/^[\pL\s\-]+$/u',
+        'apellidos' => 'required|max:25|regex:/^[\pL\s\-]+$/u',
         'nacionalidad' => 'required|max:10|alpha_num',
         ]);
 
