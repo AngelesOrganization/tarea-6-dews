@@ -40,7 +40,7 @@ class ControladorLibros extends Controller
     {
         $validated = $request->validate([
             'titulo' => 'required|max:50|regex:/^[\pL\s\-]+$/u',
-            'f_publicacion' => 'nullable|date',
+            'f_publicacion' => 'nullable|date_format:d/m/Y',
             ]);
     
             Libros::create($request->all());
