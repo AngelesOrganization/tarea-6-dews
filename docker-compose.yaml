@@ -1,6 +1,7 @@
 version: '3.3'
 services: 
     main:
+        restart: unless-stopped
         image: ghcr.io/angelesorganization/tarea-6-dews:main
         ports:
             - 8000:8000
